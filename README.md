@@ -2,7 +2,10 @@
 
 try to learn [civet 🦝](https://civet.dev) language, better typescript
 
-```civet
+<img width="1017" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/63f9b57a-7f24-42b7-9d18-d45ad9601c62">
+
+
+```coffeescript
 // main.civet
 Koa from koa
 Router from @koa/router
@@ -31,7 +34,7 @@ app := new Koa()
 |> .listen(3000, () => console.log(`listen http://localhost:3000`))
 ```
 
-```civet
+```coffeescript
 // prime.civet
 export function primeFactorsTo(max: number): number[]
   skip .= [] as boolean[]
@@ -42,7 +45,7 @@ export function primeFactorsTo(max: number): number[]
     prime
 ```
 
-```civet
+```coffeescript
 // boredapi.civet
 export type Activity
   activity: string
@@ -61,3 +64,24 @@ export function fetchActivity
     |> await
     |> (it) => it as Activity |> (it) => it as Activity
 ```
+
+## Feature I like
+
+<img width="981" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/cab4c0f0-319d-4a2a-b975-2aeb8311d358">
+
+<img width="980" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/4e48c302-ea5e-43aa-838d-fb0da91df093">
+
+<img width="976" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/3a3d446d-6b8c-44cc-93ee-e7d9a565dd5b">
+
+<img width="960" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/fd640249-33b3-45fe-b92a-8cf50fd2b38d">
+
+<img width="967" alt="image" src="https://github.com/krist7599555/example-civet/assets/19445033/92ac1930-7ac5-42a6-a270-049266cb66ec">
+
+and more see [civet cheatsheet](https://civet.dev/cheatsheet)
+
+
+
+
+
+
+
