@@ -1,0 +1,26 @@
+// main.civet
+Koa from koa
+Router from @koa/router
+{ fetchActivity } from ./boredapi.civet
+{ primeFactorsTo } from ./prime.civet
+
+count .= 0
+
+router := new Router()
+|> .get('/', async (ctx) => {
+  ctx.body = 
+    name: 'civet testing'
+    count: ++count
+    activity: fetchActivity() |> await
+    prime: primeFactorsTo(47),
+    date: new Date()
+})
+|> .get('/now', (ctx) => {
+  ctx.body = 
+    date: new Date()
+});
+
+app := new Koa()
+|> .use(router.routes())
+|> .use(router.allowedMethods())
+|> .listen(3000, () => console.log(`listen http://localhost:3000`))

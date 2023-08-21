@@ -1,0 +1,9 @@
+// prime.civet
+export function primeFactorsTo(max: number): number[]
+  skip .= [] as boolean[]
+  for prime of [2 .. max] // for inclusive [a .. b] = [a, a+1, a+2, ..., b-2, b-1, b]
+    continue if skip[prime];
+    for i .= prime * prime; i <= max; i += prime
+      skip[i] = true;
+    prime
+  

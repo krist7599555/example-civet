@@ -1,0 +1,17 @@
+// boredapi.civet
+export type Activity
+  activity: string
+  type: string
+  participants: number
+  price: number
+  link: string
+  key: string
+  accessibility: number
+
+export function fetchActivity
+  "https://www.boredapi.com/api/activity"
+    |> fetch
+    |> await
+    |> .json()
+    |> await
+    |> (it) => it as Activity

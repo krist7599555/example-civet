@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "preserve",
+    "lib": ["es2022", "DOM"],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowJs": false,
+    "noEmit": true
+  },
+  "compileOnSave": false,
+  "include": ["./src"],
+  "exclude": ["./build", "./dist"],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "ES2020"
+    }
+  }
+}
