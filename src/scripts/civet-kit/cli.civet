@@ -1,0 +1,17 @@
+#!/usr/bin/env node --loader @danielx/civet/esm
+// https://civet.dev/getting-started/#executing-codev
+* as fs from node:fs
+* as path from node:path
+
+npm_root_dir := path.resolve('./')
+  |> (p) => 
+    loop
+      let pkgp = path.resolve(p, './package.json')
+      return p if fs.existsSync(pkgp)
+      p = path.dirname(p)
+
+	
+src_civetkit_dir := new URL('.civet-kit', import.meta.url).pathname
+
+fs.cpSync(src_civetkit_dir, path.resolve(npm_root_dir, '.civet-kit'), { recursive: true });
+

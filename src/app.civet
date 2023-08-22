@@ -3,6 +3,8 @@ Koa from koa
 Router from @koa/router
 { fetchActivity } from ./boredapi.civet
 { primeFactorsTo } from ./prime.civet
+{ users } from ./empty.ts
+{ db } from ./database.ts
 
 count .= 0
 
@@ -14,13 +16,18 @@ router := new Router()
     activity: fetchActivity() |> await
     prime: primeFactorsTo(47),
     date: new Date()
+    users: users
 })
 |> .get('/now', (ctx) => {
   ctx.body = 
     date: new Date()
+})
+|> .get('/users', (ctx) => {
+  ctx.body = 
+    data: db.users.findMany()
 });
 
-app := new Koa()
+export app := new Koa()
 |> .use(router.routes())
 |> .use(router.allowedMethods())
-|> .listen(3000, () => console.log(`listen http://localhost:3000`))
+// |> .listen(3000, () => console.log(`listen http://localhost:3000`))
